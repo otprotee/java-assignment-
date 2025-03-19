@@ -65,6 +65,7 @@ public class shopping {
 
     public static void main(String[] args) {
         shopping shopping  = new shopping();
+
         System.out.println(shopping.canned_foods);
         System.out.println(shopping.fruits);
     }
