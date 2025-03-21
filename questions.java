@@ -1,11 +1,9 @@
-import java.util.Locale;
 import java.util.Scanner;
 
 public class questions {
     public static void main(String[] args){
         shopping.main(new String[0]);
         int loopBrsch = 0;
-        int fruitLen = shopping.fruits.size();
         try {
             while(loopBrsch == 0) {
                 Scanner brsrch = new Scanner(System.in);
