@@ -14,9 +14,9 @@ public class window {
         JFrame frame = new JFrame("shopping");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JLabel fruit = new JLabel();
-        fruit.setLayout(new GridLayout(Lfruits, 1));
-        frame.getContentPane().add(fruit, BorderLayout.CENTER);
+        JLabel frt = new JLabel();
+        frt.setLayout(new GridLayout(Lfruits, 1));
+        frame.getContentPane().add(frt, BorderLayout.CENTER);
 
         frame.pack();
         frame.setVisible(true);
