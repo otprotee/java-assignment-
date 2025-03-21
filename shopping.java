@@ -1,10 +1,13 @@
+import javax.swing.*;
 import java.util.ArrayList;
 
 public class shopping {
-    ArrayList<String> fruits;
+    static ArrayList<String> fruits;
     ArrayList<String> canned_foods;
+    ArrayList<JLabel> test;
 
     public shopping() {
+
         fruits = new ArrayList<String>();
         fruits.add("Apples");
         fruits.add("Apricots");
