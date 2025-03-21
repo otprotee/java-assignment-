@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.concurrent.ThreadPoolExecutor;
 
 public class window {
@@ -17,6 +18,7 @@ public class window {
         JLabel frt = new JLabel();
         frt.setLayout(new GridLayout(Lfruits, 1));
         frame.getContentPane().add(frt, BorderLayout.CENTER);
+
 
         frame.pack();
         frame.setVisible(true);
