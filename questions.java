@@ -22,7 +22,6 @@ public class questions {
                         System.out.println(shopping.fruits);
                         System.out.println("\n Canned Foods: \n");
                         System.out.println(shopping.canned_foods);
-                        loopBrsch = 1;
                     }
                     else if (brsrchN.equals("search") || brsrchN.equals("search ")) {
                             Scanner srch = new Scanner(System.in);
@@ -80,8 +79,8 @@ public class questions {
                             System.out.println("Error QM002");
                         }
                     }
-                }
-        catch(Exception e){
+
+        } catch(Exception e){
             System.out.println("Error QM001");
         }
     }
