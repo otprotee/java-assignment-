@@ -1,7 +1,12 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class questions {
+    static ArrayList<String> basket;
+
     public static void main(String[] args){
+        basket = new ArrayList<String>();
+
         shopping.main(new String[0]);
         int loopBrsch = 0;
         try {
@@ -29,6 +34,9 @@ public class questions {
                             for (String range1 : shopping.fruits) {
                                 if (range1.equals(srch1N)) {
                                     System.out.println(srch1N + " is in the list");
+                                    System.out.println("Do you want to add this to basket yes or no:");
+                                    ////
+
                                 } else {
                                     System.out.println("We dont sell" + srch1N);
                                 }
@@ -42,7 +50,7 @@ public class questions {
                                 if (range1.equals(srch2N)) {
                                     System.out.println(srch2N + " is in the list");
                                 } else {
-                                    System.out.println("We dont sell" + srch2N);
+                                    System.out.println("We don't sell" + srch2N);
                                 }
                             }
                         }
