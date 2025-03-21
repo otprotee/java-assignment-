@@ -74,12 +74,18 @@ public class questions {
                                     }
                                 }
                             }
-                                }
-                        } catch(Exception e) {
-                            System.out.println("Error QM002");
-                        }
                     }
+                } catch(Exception e) {
+                    System.out.println("Error QM002");
+                }
+                Scanner checkout = new Scanner (System.in);
+                System.out.println("do you want to go to checkout yes or no: ");
+                String check = checkout.nextLine();
+                if (check.equals("yes") || check.equals("yes ")) {
 
+                }
+
+            }
         } catch(Exception e){
             System.out.println("Error QM001");
         }
