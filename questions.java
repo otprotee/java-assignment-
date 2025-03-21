@@ -26,18 +26,19 @@ public class questions {
                         if (itemN.equals("fruits") || itemN.equals("fruits ")) {
                             System.out.println("what item do you want to search: ");
                             String srch1 = srch.nextLine();
+                            String srch1N = srch1.toLowerCase();
                             for (int range1 = 0; range1 < fruitLen; range1++) {
 
                             }
                         }
                     }
                 } catch(Exception e) {
-
+                    System.out.println("Error QM002");
                 }
             }
         }
         catch(Exception e){
-            System.out.println("An error has occurred QM001");
+            System.out.println("Error QM001");
         }
     }
 }
