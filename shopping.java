@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class shopping {
     static ArrayList<String> fruits;
-    ArrayList<String> canned_foods;
+    static ArrayList<String> canned_foods;
 
     public shopping() {
 
@@ -67,7 +67,5 @@ public class shopping {
     public static void main(String[] args) {
         shopping shopping  = new shopping();
 
-        System.out.println(shopping.canned_foods);
-        System.out.println(shopping.fruits);
     }
 }
