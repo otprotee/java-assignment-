@@ -18,6 +18,7 @@ public class questions {
                         System.out.println(shopping.fruits);
                         System.out.println("\n Canned Foods: \n");
                         System.out.println(shopping.canned_foods);
+                        loopBrsch = 1;
                     } else if (brsrchN.equals("search") || brsrchN.equals("search ")) {
                         Scanner srch = new Scanner(System.in);
                         System.out.println("What do you want to search fruits or canned foods: ");
@@ -27,8 +28,24 @@ public class questions {
                             System.out.println("what item do you want to search: ");
                             String srch1 = srch.nextLine();
                             String srch1N = srch1.toLowerCase();
-                            for (int range1 = 0; range1 < fruitLen; range1++) {
-
+                            for (String range1 : shopping.fruits) {
+                                if (range1.equals(srch1N)) {
+                                    System.out.println(srch1N + " is in the list");
+                                } else {
+                                    System.out.println("We dont sell" + srch1N);
+                                }
+                            }
+                        }
+                        if (itemN.equals("canned foods") || itemN.equals("canned foods ")) {
+                            System.out.println("what item do you want to search: ");
+                            String srch2 = srch.nextLine();
+                            String srch2N = srch2.toLowerCase();
+                            for (String range1 : shopping.fruits) {
+                                if (range1.equals(srch2N)) {
+                                    System.out.println(srch2N + " is in the list");
+                                } else {
+                                    System.out.println("We dont sell" + srch2N);
+                                }
                             }
                         }
                     }
