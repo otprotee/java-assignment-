@@ -3,6 +3,9 @@ import java.util.Scanner;
 
 public class questions {
     static ArrayList<String> basket;
+    int total = 0;
+
+
 
     public static void main(String[] args){
         basket = new ArrayList<>();
@@ -42,6 +45,7 @@ public class questions {
                                                 int bsktnum = basketS.nextInt();
                                                 for (int range2 = 0; range2 < bsktnum; range2++){
                                                     basket.add(srch1);
+
                                                 }
                                             }
                                             catch(Exception e) {
@@ -51,7 +55,7 @@ public class questions {
                                     }
                                 }
                             }
-                            if (itemN.equals("canned foods") || itemN.equals("canned foods ")) {
+                            else if (itemN.equals("canned foods") || itemN.equals("canned foods ")) {
                                 System.out.println("what item do you want to search: ");
                                 String srch2 = srch.nextLine().toLowerCase();
                                 for (String range4 : shopping.fruits) {
@@ -65,6 +69,7 @@ public class questions {
                                                 int bsktnum = basketS.nextInt();
                                                 for (int range3 = 0; range3 < bsktnum; range3++){
                                                     basket.add(srch2);
+
                                                 }
                                             }
                                             catch(Exception e) {
@@ -73,6 +78,9 @@ public class questions {
                                         } else System.out.println("We dont sell " + srch2);
                                     }
                                 }
+                            }
+                            else {
+                                System.out.println("incorrect input");
                             }
                     }
                 } catch(Exception e) {

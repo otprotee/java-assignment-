@@ -12,7 +12,6 @@ public class shopping {
         fruits.add("avocados");
         fruits.add("bananas");
         fruits.add("cherries");
-        fruits.add("cherries");
         fruits.add("dates");
         fruits.add("figs");
         fruits.add("grapes");
