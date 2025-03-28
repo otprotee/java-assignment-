@@ -2,6 +2,8 @@ import java.util.HashMap;
 
 public class Prices {
     static HashMap<String, Double> Pfruits = new HashMap<String, Double>();
+    static HashMap<String, Double> Pcanned = new HashMap<String, Double>();
+
 
     Prices(){
         Pfruits.put("apples", 2.50);

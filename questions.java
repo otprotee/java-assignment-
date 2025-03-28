@@ -60,7 +60,8 @@ public class questions {
                                     System.out.println("We dont sell " + srch1);
                                 }
                             }
-                        } else if (itemN.equals("canned foods") || itemN.equals("canned foods ")) {
+                        }
+                        else if (itemN.equals("canned foods") || itemN.equals("canned foods ")) {
                             System.out.println("what item do you want to search: ");
                             srch2 = srch.nextLine().toLowerCase();
                             for (String range1 : shopping.canned_foods) {
@@ -83,8 +84,7 @@ public class questions {
                                     }
                                     else if (bsktsrch.equals("no")){
                                         System.out.println(" ");
-                                    }
-                                    System.out.println("We don't sell " + srch2);
+                                    }else System.out.println("We don't sell " + srch2);
                                 }
                             }
                         }
