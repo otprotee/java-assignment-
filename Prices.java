@@ -30,10 +30,43 @@ public class Prices {
         Pfruits.put("plums", 4.50);
         Pfruits.put("watermelons", 1.99);
 
+        Pcanned.put("canned peaches", 0.80);
+        Pcanned.put("canned pears", 0.70);
+        Pcanned.put("canned pineapple", 0.75);
+        Pcanned.put("canned applesauce", 0.60);
+        Pcanned.put("canned Cherries", 0.65);
+        Pcanned.put("canned Corn", 0.70);
+        Pcanned.put("canned mushrooms", 1.20);
+        Pcanned.put("canned carrots", 2.50);
+        Pcanned.put("canned asparagus", 1.80);
+        Pcanned.put("canned tomatoes", 2.00);
+        Pcanned.put("canned peas", 1.00);
+        Pcanned.put("canned spinach", 0.90);
+        Pcanned.put("canned olives", 1.10);
+        Pcanned.put("canned tuna", 1.50);
+        Pcanned.put("canned salmon", 0.85);
+        Pcanned.put("canned sardines", 1.00);
+        Pcanned.put("baked beans", 1.00);
+        Pcanned.put("kidney beans", 1.20);
+        Pcanned.put("chickpeas", 1.10);
+        Pcanned.put("lentils", 1.50);
+        Pcanned.put("canned beef", 0.90);
+        Pcanned.put("canned pork", 1.30);
+        Pcanned.put("noodle soup", 1.20);
+        Pcanned.put("evaporated milk", 1.50);
+        Pcanned.put("canned soups", 1.00);
+        Pcanned.put("canned chili", 2.00);
+
     }
 
 
-    public  double price(String item){
-        return Pfruits.get(item);
+
+    public double price(String item){
+        if(Pcanned.containsKey(item)){
+            return Pcanned.get(item);
+
+        }
+        else return Pfruits.get(item);
+
     }
 }

@@ -16,7 +16,7 @@ public class shopping {
         fruits.add("figs");
         fruits.add("grapes");
         fruits.add("melons");
-        fruits.add("kiwis ");
+        fruits.add("kiwis");
         fruits.add("lemons");
         fruits.add("mangoes");
         fruits.add("olives");
@@ -32,34 +32,34 @@ public class shopping {
         fruits.add("watermelons");
 
         canned_foods = new ArrayList<String>();
-        canned_foods.add("canned Peaches");
+        canned_foods.add("canned peaches");
         canned_foods.add("canned pears");
         canned_foods.add("canned pineapple");
-        canned_foods.add("canned Applesauce");
+        canned_foods.add("canned applesauce");
         canned_foods.add("canned Cherries");
         canned_foods.add("canned Corn");
         canned_foods.add("canned mushrooms");
         canned_foods.add("canned carrots");
         canned_foods.add("canned asparagus");
         canned_foods.add("canned tomatoes");
-        canned_foods.add("canned Peas");
-        canned_foods.add("canned Spinach");
-        canned_foods.add("canned Olives ");
-        canned_foods.add("canned Tuna");
+        canned_foods.add("canned peas");
+        canned_foods.add("canned spinach");
+        canned_foods.add("canned olives");
+        canned_foods.add("canned tuna");
         canned_foods.add("canned salmon");
         canned_foods.add("canned sardines");
         canned_foods.add("baked beans");
         canned_foods.add("kidney beans");
         canned_foods.add("chickpeas");
         canned_foods.add("lentils");
-        canned_foods.add("canned Beef");
+        canned_foods.add("canned beef");
         canned_foods.add("canned pork");
         canned_foods.add("noodle soup");
-        canned_foods.add("Evaporated milk");
-        canned_foods.add("Coconut milk");
-        canned_foods.add("canned Soups");
-        canned_foods.add("canned Chili");
-        canned_foods.add("canned Tomatoes");
+        canned_foods.add("evaporated milk");
+        canned_foods.add("coconut milk");
+        canned_foods.add("canned soups");
+        canned_foods.add("canned chili");
+        canned_foods.add("canned tomatoes");
 
     }
 
