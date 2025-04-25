@@ -7,19 +7,41 @@ public class questions {
     //initialise basket array
     static ArrayList<String> basket;
 
-    //scanners
-    static Scanner srch = new Scanner(System.in);
-    static Scanner specbrs = new Scanner(System.in);
-    static Scanner brsrch = new Scanner(System.in);
 
-    //set variables to empty
-    static String srch1 = "NO ITEM";
-    static String srch2 = "NO ITEM";
-    static String buybrs = "NO ITEM";
     static Double total = 0.00;
 
 
+    
+
     public static void main(String[] args){
+
+        //scanners
+        Scanner srch = new Scanner(System.in);
+        Scanner specbrs = new Scanner(System.in);
+        Scanner brsrch = new Scanner(System.in);
+        Scanner basketS = new Scanner(System.in);
+        Scanner checkout = new Scanner (System.in);
+
+        //set variables to empty
+        String srch1 = "NULL";
+        String srch2 = "NULL";
+        String buybrs = "NULL";
+        String brsrchN = "NULL";
+        String bspec = "NULL";
+        String bbrs = "NULL";
+
+
+        //range variables
+        int range1 = 0;
+        int range2 = 0;
+        int range4 = 0;
+        int range6 = 0;
+        int range8 = 0;
+        int range10 = 0;
+        int range12 = 0;
+        int range13 = basket.size()-1;
+        int range14 = basket.size()-1;
+
         basket = new ArrayList<>();
         Prices prices = new Prices();
         shopping.main(new String[0]);
@@ -28,24 +50,23 @@ public class questions {
         try {
             while(loopBrsch == 0) {
                 System.out.println("Would you like to browse or search for and item: ");
-                String brsrchR =  brsrch.nextLine();
-                String brsrchN =  brsrchR.toLowerCase();
-                Scanner basketS = new Scanner(System.in);
+                brsrchN =  brsrch.nextLine().toLowerCase();
+
                 try {
                     if (brsrchN.equals("browse") || brsrchN.equals("browse ")) {
                         System.out.println("Do you want to browse a specific area or everything: ");
-                        String bspec = brsrch.nextLine();
+                        bspec = brsrch.nextLine();
                         if (bspec.equals("everything") || bspec.equals("everything ")){
                             System.out.println("\nFruits: \n");
-                            for (int range1=0; range1 <= shopping.fruits.size()-1; range1++) {
+                            for (;range1 <= shopping.fruits.size()-1; range1++) {
                                 System.out.println(shopping.fruits.get(range1));
                             }
                             System.out.println("\nCanned Foods:\n");
-                            for (int range2=0; range2 <= shopping.canned_foods.size()-1; range2++) {
+                            for (;range2 <= shopping.canned_foods.size()-1; range2++) {
                                 System.out.println(shopping.canned_foods.get(range2));
                             }
                             System.out.println("Do you want to buy anything? yes or no:");
-                            String bbrs = brsrch.nextLine();
+                            bbrs = brsrch.nextLine();
                             if (bbrs.equals("yes") || bbrs.equals("yes ")){
                                 System.out.println("What do you want to buy: ");
                                 buybrs = brsrch.nextLine();
@@ -58,7 +79,7 @@ public class questions {
                                             System.out.println("how many do you want to add: ");
                                             try {
                                                 int bsktnum = basketS.nextInt();
-                                                for (int range4 = 0; range4 < bsktnum; range4++) {
+                                                for (; range4 < bsktnum; range4++) {
                                                     basket.add(buybrs);
                                                     String buybrs1 = buybrs;
                                                     System.out.println(buybrs1 + buybrs);
@@ -79,7 +100,7 @@ public class questions {
                                             System.out.println("how many do you want to add: ");
                                             try {
                                                 int bsktnum = basketS.nextInt();
-                                                for (int range6 = 0; range6 < bsktnum; range6++) {
+                                                for (;range6 < bsktnum; range6++) {
                                                     basket.add(buybrs);
                                                     total += prices.price(buybrs);
                                                 }
@@ -107,7 +128,7 @@ public class questions {
                                             System.out.println("how many do you want to add: ");
                                             try {
                                                 int bsktnum = basketS.nextInt();
-                                                for (int range8 = 0; range8 < bsktnum; range8++) {
+                                                for (;range8 < bsktnum; range8++) {
                                                     basket.add(buybrs);
                                                     String buybrs1 = buybrs;
                                                     total += prices.price(buybrs1);
@@ -131,7 +152,7 @@ public class questions {
                                             System.out.println("how many do you want to add: ");
                                             try {
                                                 int bsktnum = basketS.nextInt();
-                                                for (int range8 = 0; range8 < bsktnum; range8++) {
+                                                for (;range8 < bsktnum; range8++) {
                                                     basket.add(buybrs);
                                                     total += prices.price(buybrs);
                                                 }
@@ -146,9 +167,8 @@ public class questions {
                     }
                     else if (brsrchN.equals("search") || brsrchN.equals("search ")) {
                         System.out.println("What do you want to search fruits or canned foods: ");
-                        String item = srch.nextLine();
-                        String itemN = item.toLowerCase();
-                        if (itemN.equals("fruits") || itemN.equals("fruits ")) {
+                        String item = srch.nextLine().toLowerCase();
+                        if (item.equals("fruits") || item.equals("fruits ")) {
                             System.out.println("what item do you want to search: ");
                             srch1 = srch.nextLine().toLowerCase();
                             for (String range9 : shopping.fruits) {
@@ -160,7 +180,7 @@ public class questions {
                                         System.out.println("how many do you want to add: ");
                                         try {
                                             int bsktnum = basketS.nextInt();
-                                            for (int range10 = 0; range10 < bsktnum; range10++) {
+                                            for (; range10 < bsktnum; range10++) {
                                                 basket.add(srch1);
                                                 total += prices.price(srch1);
 
@@ -172,7 +192,7 @@ public class questions {
                                 }
                             }
                         }
-                        else if (itemN.equals("canned foods") || itemN.equals("canned foods ")) {
+                        else if (item.equals("canned foods") || item.equals("canned foods ")) {
                             System.out.println("what item do you want to search: ");
                             srch2 = srch.nextLine().toLowerCase();
                             for (String range11 : shopping.canned_foods) {
@@ -184,7 +204,7 @@ public class questions {
                                         System.out.println("how many do you want to add: ");
                                         try {
                                             int bsktnum = basketS.nextInt();
-                                            for (int range12 = 0; range12 < bsktnum; range12++) {
+                                            for (;range12 < bsktnum; range12++) {
                                                 basket.add(srch2);
                                                 total += prices.price(srch2);
 
@@ -207,19 +227,18 @@ public class questions {
                     System.out.println("Error QM007" + e.getMessage());
                 }
                 System.out.println(" Basket: ");
-                for (int range13 = basket.size()-1; range13 > -1; range13--) {
+                for (;range13 > -1; range13--) {
                     System.out.println(basket.get(range13));
                 }
-                Scanner checkout = new Scanner (System.in);
                 System.out.println("do you want to go to checkout yes or no: ");
                 String check = checkout.nextLine();
                 if (check.equals("yes") || check.equals("yes ")) {
                     System.out.println("Your basket:");
-                    for (int range14 = basket.size()-1; range14 > -1; range14--) {
+                    for (;range14 > -1; range14--) {
                         System.out.println(basket.get(range14));
                     }
 
-                    System.out.println("Your total is" );
+                    System.out.println("\nYour total is" );
                     String totalOutput = System.out.printf("£" + "%.2f", total.floatValue()).toString();
                     loopBrsch = 1;
                 }
