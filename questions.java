@@ -7,11 +7,17 @@ public class questions {
     //initialise basket array
     static ArrayList<String> basket;
 
-
     static Double total = 0.00;
 
+    static void range(String item1){
+        for (String range7 : shopping.fruits) {
+            if (range7.equals(item1)) {
+                System.out.println(item1 + " is in the list");
+                System.out.println("Do you want to add this to basket yes or no:");
+            }
+        }
+    }
 
-    
 
     public static void main(String[] args){
 
@@ -19,8 +25,8 @@ public class questions {
         Scanner srch = new Scanner(System.in);
         Scanner specbrs = new Scanner(System.in);
         Scanner brsrch = new Scanner(System.in);
-        Scanner basketS = new Scanner(System.in);
         Scanner checkout = new Scanner (System.in);
+        Scanner basketS = new Scanner(System.in);
 
         //set variables to empty
         String srch1 = "NULL";
@@ -39,14 +45,11 @@ public class questions {
         int range8 = 0;
         int range10 = 0;
         int range12 = 0;
-        int range13 = basket.size()-1;
-        int range14 = basket.size()-1;
 
         basket = new ArrayList<>();
         Prices prices = new Prices();
         shopping.main(new String[0]);
         int loopBrsch = 0;
-        System.out.println(prices.price("apples"));
         try {
             while(loopBrsch == 0) {
                 System.out.println("Would you like to browse or search for and item: ");
@@ -70,26 +73,20 @@ public class questions {
                             if (bbrs.equals("yes") || bbrs.equals("yes ")){
                                 System.out.println("What do you want to buy: ");
                                 buybrs = brsrch.nextLine();
-                                for (String range3 : shopping.fruits) {
-                                    if (range3.equals(buybrs)) {
-                                        System.out.println(buybrs + " is in the list");
-                                        System.out.println("Do you want to add this to basket yes or no:");
-                                        String bsktbrs = basketS.nextLine().toLowerCase();
+                                range(buybrs);
+                                String bsktbrs = basketS.nextLine().toLowerCase();
                                         if (bsktbrs.equals("yes")) {
                                             System.out.println("how many do you want to add: ");
                                             try {
                                                 int bsktnum = basketS.nextInt();
                                                 for (; range4 < bsktnum; range4++) {
                                                     basket.add(buybrs);
-                                                    String buybrs1 = buybrs;
-                                                    System.out.println(buybrs1 + buybrs);
-                                                    total += prices.price(buybrs1);
+                                                    total += prices.price(buybrs);
                                                 }
                                             } catch (Exception e) {
                                                 System.out.println("Error QM001 " + e);
                                             }
                                         }
-                                    }
                                 }
                                 for (String range5 :  shopping.canned_foods){
                                     if (range5.equals(buybrs)) {
@@ -164,7 +161,6 @@ public class questions {
                                 }
                             }
                         }
-                    }
                     else if (brsrchN.equals("search") || brsrchN.equals("search ")) {
                         System.out.println("What do you want to search fruits or canned foods: ");
                         String item = srch.nextLine().toLowerCase();
@@ -227,14 +223,14 @@ public class questions {
                     System.out.println("Error QM007" + e.getMessage());
                 }
                 System.out.println(" Basket: ");
-                for (;range13 > -1; range13--) {
+                for (int range13 = basket.size()-1;range13 > -1; range13--) {
                     System.out.println(basket.get(range13));
                 }
                 System.out.println("do you want to go to checkout yes or no: ");
                 String check = checkout.nextLine();
                 if (check.equals("yes") || check.equals("yes ")) {
                     System.out.println("Your basket:");
-                    for (;range14 > -1; range14--) {
+                    for (int range14 = basket.size()-1;range14 > -1; range14--) {
                         System.out.println(basket.get(range14));
                     }
 
@@ -244,6 +240,7 @@ public class questions {
                 }
 
             }
+
         } catch(Exception e){
             System.out.println("Error QM008");
         }
