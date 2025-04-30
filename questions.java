@@ -1,7 +1,5 @@
-import javax.xml.transform.Source;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.math.*;
 
 public class questions {
     //initialise basket array
@@ -9,7 +7,7 @@ public class questions {
 
     static Double total = 0.00;
 
-    static void range(String item1){
+    static void fRange(String item1){
         for (String range7 : shopping.fruits) {
             if (range7.equals(item1)) {
                 System.out.println(item1 + " is in the list");
@@ -73,7 +71,7 @@ public class questions {
                             if (bbrs.equals("yes") || bbrs.equals("yes ")){
                                 System.out.println("What do you want to buy: ");
                                 buybrs = brsrch.nextLine();
-                                range(buybrs);
+                                fRange(buybrs);
                                 String bsktbrs = basketS.nextLine().toLowerCase();
                                         if (bsktbrs.equals("yes")) {
                                             System.out.println("how many do you want to add: ");
@@ -127,8 +125,7 @@ public class questions {
                                                 int bsktnum = basketS.nextInt();
                                                 for (;range8 < bsktnum; range8++) {
                                                     basket.add(buybrs);
-                                                    String buybrs1 = buybrs;
-                                                    total += prices.price(buybrs1);
+                                                    total += prices.price(buybrs);
                                                 }
                                             } catch (Exception e) {
                                                 System.out.println("Error QM003 " + e);
