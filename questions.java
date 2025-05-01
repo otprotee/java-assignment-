@@ -98,23 +98,18 @@ public class questions {
                                 System.out.println(shopping.fruits);
                                 System.out.println("What do you want to buy: ");
                                 buybrs = brsrch.nextLine();
-                                for (String range7 : shopping.fruits) {
-                                    if (range7.equals(buybrs)) {
-                                        System.out.println(buybrs + " is in the list");
-                                        System.out.println("Do you want to add this to basket yes or no:");
-                                        String bsktbrs = basketS.nextLine().toLowerCase();
-                                        if (bsktbrs.equals("yes")) {
-                                            System.out.println("how many do you want to add: ");
-                                            try {
-                                                int bsktnum = basketS.nextInt();
-                                                for (;range8 < bsktnum; range8++) {
-                                                    basket.add(buybrs);
-                                                    total += prices.price(buybrs);
-                                                }
-                                            } catch (Exception e) {
-                                                System.out.println("Error QM003 " + e);
-                                            }
+                                Functions.fsRange(specch);
+                                String bsktbrs = basketS.nextLine().toLowerCase();
+                                if (bsktbrs.equals("yes")) {
+                                    System.out.println("how many do you want to add: ");
+                                    try {
+                                        int bsktnum = basketS.nextInt();
+                                        for (;range8 < bsktnum; range8++) {
+                                            basket.add(buybrs);
+                                            total += prices.price(buybrs);
                                         }
+                                    } catch (Exception e) {
+                                        System.out.println("Error QM003 " + e);
                                     }
                                 }
                             }else if (specch.equals("canned foods") || specch.equals("canned foods ")){
