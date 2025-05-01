@@ -7,16 +7,8 @@ public class questions {
 
     static Double total = 0.00;
 
-    static void fRange(String item1){
-        for (String range7 : shopping.fruits) {
-            if (range7.equals(item1)) {
-                System.out.println(item1 + " is in the list");
-                System.out.println("Do you want to add this to basket yes or no:");
-            }
-        }
-    }
 
-
+    //main
     public static void main(String[] args){
 
         //scanners
@@ -36,8 +28,6 @@ public class questions {
 
 
         //range variables
-        int range1 = 0;
-        int range2 = 0;
         int range4 = 0;
         int range6 = 0;
         int range8 = 0;
@@ -58,20 +48,14 @@ public class questions {
                         System.out.println("Do you want to browse a specific area or everything: ");
                         bspec = brsrch.nextLine();
                         if (bspec.equals("everything") || bspec.equals("everything ")){
-                            System.out.println("\nFruits: \n");
-                            for (;range1 <= shopping.fruits.size()-1; range1++) {
-                                System.out.println(shopping.fruits.get(range1));
-                            }
-                            System.out.println("\nCanned Foods:\n");
-                            for (;range2 <= shopping.canned_foods.size()-1; range2++) {
-                                System.out.println(shopping.canned_foods.get(range2));
-                            }
+                            Functions.fRange();
+                            Functions.cRange();
                             System.out.println("Do you want to buy anything? yes or no:");
                             bbrs = brsrch.nextLine();
                             if (bbrs.equals("yes") || bbrs.equals("yes ")){
                                 System.out.println("What do you want to buy: ");
                                 buybrs = brsrch.nextLine();
-                                fRange(buybrs);
+                                Functions.fsRange(buybrs);
                                 String bsktbrs = basketS.nextLine().toLowerCase();
                                         if (bsktbrs.equals("yes")) {
                                             System.out.println("how many do you want to add: ");
