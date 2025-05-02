@@ -17,7 +17,7 @@ public class Functions {
         for (String range8 : shopping.canned_foods) {
             if (range8.equals(item1)) {
                 System.out.println("Do you want to add this to basket yes or no:");
-            }
+            }else System.out.println("Sorry we dont sell "+ item1);
         }
     }
 

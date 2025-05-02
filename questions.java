@@ -40,7 +40,7 @@ public class questions {
 
         while(loopBrsch == 0) {
             System.out.println("Would you like to browse or search for and item: ");
-            brsrchN =  brsrch.nextLine().toLowerCase();
+            brsrchN = brsrch.nextLine().toLowerCase();
 
 
             //browse
@@ -78,89 +78,89 @@ public class questions {
                             Functions.total_Calc(buybrs);
                         }
                     }
-                    
+
                     //browse specific area canned foods
-                     else if (specch.equals("canned foods") || specch.equals("canned foods ")) {
+                    else if (specch.equals("canned foods") || specch.equals("canned foods ")) {
+
+                        //call function
                         Functions.cRange();
+
+                        //questions
                         System.out.println("What do you want to buy: ");
                         buybrs = brsrch.nextLine();
+
+                        //call function
                         Functions.csRange(buybrs);
+
                         String bsktbrs = basketS.nextLine().toLowerCase();
+
+                        //calculation
                         if (bsktbrs.equals("yes")) {
                             Functions.total_Calc(buybrs);
                         }
                     }
                 }
-            }else if (brsrchN.equals("search") || brsrchN.equals("search ")) {
+            }
+
+            //search
+            else if (brsrchN.equals("search") || brsrchN.equals("search ")) {
+
+                //questions
                 System.out.println("What do you want to search fruits or canned foods: ");
                 String item = srch.nextLine().toLowerCase();
+
+                //search fruits
                 if (item.equals("fruits") || item.equals("fruits ")) {
+
+                    //questions
                     System.out.println("what item do you want to search: ");
                     srch1 = srch.nextLine().toLowerCase();
-                    for (String range9 : shopping.fruits) {
-                        if (range9.equals(srch1)) {
-                            System.out.println(srch1 + " is in the list");
-                            System.out.println("Do you want to add this to basket yes or no:");
-                            String bsktsrch = basketS.nextLine().toLowerCase();
-                            if (bsktsrch.equals("yes")) {
-                                System.out.println("how many do you want to add: ");
-                                try {
-                                    int bsktnum = basketS.nextInt();
-                                    for (; range10 < bsktnum; range10++) {
-                                        basket.add(srch1);
-                                        total += prices.price(srch1);
+                    Functions.fsRange(srch1);
+                    String bsktsrch = basketS.nextLine().toLowerCase();
 
-                                    }
-                                } catch (Exception e) {
-                                    System.out.println("Error QM005" + e);
-                                }
-                            }else System.out.println("We dont sell " + srch1);
-                        }
+                    //calculation
+                    if (bsktsrch.equals("yes")) {
+                        Functions.total_Calc(srch1);
                     }
                 }
+
+                //search canned foods
                 else if (item.equals("canned foods") || item.equals("canned foods ")) {
+
+                    //questions
                     System.out.println("what item do you want to search: ");
                     srch2 = srch.nextLine().toLowerCase();
-                    for (String range11 : shopping.canned_foods) {
-                        if (range11.equals(srch2)) {
-                            System.out.println(srch2 + " is in the list");
-                            System.out.println("Do you want to add this to basket yes or no:");
-                            String bsktsrch = basketS.nextLine().toLowerCase();
-                            if (bsktsrch.equals("yes")) {
-                                System.out.println("how many do you want to add: ");
-                                try {
-                                    int bsktnum = basketS.nextInt();
-                                    for (;range12 < bsktnum; range12++) {
-                                        basket.add(srch2);
-                                        total += prices.price(srch2);
 
-                                    }
-                                } catch (Exception e) {
-                                    System.out.println("Error QM006" + e);
-                                }
-                            }
-                            else if (bsktsrch.equals("no")){
-                                System.out.println(" ");
-                            }else System.out.println("We don't sell " + srch2);
-                        }
+                    //function
+                    Functions.csRange(srch2);
+
+                    String bsktsrch = basketS.nextLine().toLowerCase();
+
+                    //calculation
+                    if (bsktsrch.equals("yes")) {
+                        Functions.total_Calc(srch2);
                     }
                 }
-                else {
-                    System.out.println("incorrect input");
-                }
             }
-            System.out.println(" Basket: ");
+
+            //basket questions
+            System.out.println("Basket: ");
             for (int range13 = basket.size()-1;range13 > -1; range13--) {
                 System.out.println(basket.get(range13));
             }
+
+            //checkout
             System.out.println("do you want to go to checkout yes or no: ");
             String check = checkout.nextLine();
+
+            //basket printing
             if (check.equals("yes") || check.equals("yes ")) {
                 System.out.println("Your basket:");
                 for (int range14 = basket.size()-1;range14 > -1; range14--) {
                     System.out.println(basket.get(range14));
                 }
 
+                //output
                 System.out.println("\nYour total is" );
                 String totalOutput = System.out.printf("£" + "%.2f", total.floatValue()).toString();
                 loopBrsch = 1;
