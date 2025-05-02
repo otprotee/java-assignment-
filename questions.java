@@ -39,7 +39,7 @@ public class questions {
         int loopBrsch = 0;
 
         while(loopBrsch == 0) {
-            System.out.println("Would you like to browse or search for and item: ");
+            System.out.println("Would you like to browse or search for an item: ");
             brsrchN = brsrch.nextLine().toLowerCase();
 
 
@@ -67,13 +67,17 @@ public class questions {
                     //browse specific area fruits
                     if (specch.equals("fruits") || specch.equals("fruits ")) {
 
+                        //function
                         Functions.fRange();
 
+                        //questions
                         System.out.println("What do you want to buy: ");
                         buybrs = brsrch.nextLine();
 
-                        Functions.fsRange(specch);
+                        Functions.fsRange(buybrs);
                         String bsktbrs = basketS.nextLine().toLowerCase();
+
+
                         if (bsktbrs.equals("yes")) {
                             Functions.total_Calc(buybrs);
                         }
@@ -87,16 +91,14 @@ public class questions {
 
                         //questions
                         System.out.println("What do you want to buy: ");
-                        buybrs = brsrch.nextLine();
+                        String buybrs1 = brsrch.nextLine();
 
-                        //call function
-                        Functions.csRange(buybrs);
-
+                        Functions.csRange(buybrs1);
                         String bsktbrs = basketS.nextLine().toLowerCase();
 
                         //calculation
                         if (bsktbrs.equals("yes")) {
-                            Functions.total_Calc(buybrs);
+                            Functions.total_Calc(buybrs1);
                         }
                     }
                 }
